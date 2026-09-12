@@ -14,12 +14,17 @@ lsearch 为你电脑里的文档、源码、PDF 和电子书建立全文索引�
 
 前往 [**Releases**](https://github.com/cmzhaopeng/lsearch-releases/releases/latest) 页面下载。
 
+以 v0.3.2 为例，各平台对应的文件：
+
 | 平台 | 架构 | 文件 |
 |---|---|---|
-| Windows 10 / 11 | x64 / ARM64 | `lsearch-*-installer.exe` |
-| macOS 11+ | Intel + Apple Silicon 通用 | `lsearch-*-universal.dmg` |
-| Ubuntu / Debian / 麒麟 | x64 / ARM64 | `lsearch_*.deb` |
-| Fedora / RHEL / openEuler | x64 / ARM64 | `lsearch-*.rpm` |
+| Windows 10 / 11 | x64 | `lsearch-0.3.2-windows-amd64-installer.exe` |
+| Windows 10 / 11 | ARM64 | `lsearch-0.3.2-windows-arm64-installer.exe` |
+| macOS 11+ | Intel + Apple Silicon 通用 | `lsearch-0.3.2-macos-universal.dmg` |
+| Ubuntu / Debian / 麒麟 | x64 | `lsearch_0.3.2-1_amd64.deb` / `lsearch_0.3.2-1+webkit41_amd64.deb` |
+| Ubuntu / Debian / 麒麟 | ARM64 | `lsearch_0.3.2-1_arm64.deb` / `lsearch_0.3.2-1+webkit41_arm64.deb` |
+| Fedora / RHEL / openEuler | x64 | `lsearch-0.3.2-1.x86_64.rpm` / `lsearch-0.3.2-1.webkit41.x86_64.rpm` |
+| Fedora / RHEL / openEuler | ARM64 | `lsearch-0.3.2-1.aarch64.rpm` / `lsearch-0.3.2-1.webkit41.aarch64.rpm` |
 
 每个版本均附 `SHA256SUMS`，建议下载后校验。
 
@@ -52,8 +57,16 @@ Windows 双击安装包；macOS 打开 dmg 后拖入「应用程序」。
 
 ### 校验下载
 
+把 `SHA256SUMS` 与安装包下载到同一目录，然后：
+
 ```bash
 sha256sum -c SHA256SUMS --ignore-missing
+```
+
+输出 `xxx: OK` 即表示文件完整。Windows 下可用 PowerShell：
+
+```powershell
+Get-FileHash .\lsearch-0.3.2-windows-amd64-installer.exe -Algorithm SHA256
 ```
 
 ---
