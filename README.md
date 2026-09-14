@@ -2,7 +2,7 @@
 
 **像 Google 一样，搜你本地的文档。**
 
-lsearch 为你电脑里的文档、源码、PDF 和电子书建立全文索引。输入几个关键词，立刻定位到是哪个文件、哪一行、哪一句。全程离线，索引和内容都存在你自己的硬盘上。
+lsearch 为你电脑里的文档、源码、PDF、电子书以及压缩包内的文件建立全文索引。输入几个关键词，立刻定位到是哪个文件、哪一行、哪一句。全程离线，索引和内容都存在你自己的硬盘上。
 
 官网：https://www.sanbucun.cc/lsearch.html
 
@@ -14,17 +14,17 @@ lsearch 为你电脑里的文档、源码、PDF 和电子书建立全文索引�
 
 前往 [**Releases**](https://github.com/cmzhaopeng/lsearch-releases/releases/latest) 页面下载。
 
-以 v0.3.2 为例，各平台对应的文件：
+以 v0.4.0 为例，各平台对应的文件：
 
 | 平台 | 架构 | 文件 |
 |---|---|---|
-| Windows 10 / 11 | x64 | `lsearch-0.3.2-windows-amd64-installer.exe` |
-| Windows 10 / 11 | ARM64 | `lsearch-0.3.2-windows-arm64-installer.exe` |
-| macOS 11+ | Intel + Apple Silicon 通用 | `lsearch-0.3.2-macos-universal.dmg` |
-| Ubuntu / Debian / 麒麟 | x64 | `lsearch_0.3.2-1_amd64.deb` / `lsearch_0.3.2-1+webkit41_amd64.deb` |
-| Ubuntu / Debian / 麒麟 | ARM64 | `lsearch_0.3.2-1_arm64.deb` / `lsearch_0.3.2-1+webkit41_arm64.deb` |
-| Fedora / RHEL / openEuler | x64 | `lsearch-0.3.2-1.x86_64.rpm` / `lsearch-0.3.2-1.webkit41.x86_64.rpm` |
-| Fedora / RHEL / openEuler | ARM64 | `lsearch-0.3.2-1.aarch64.rpm` / `lsearch-0.3.2-1.webkit41.aarch64.rpm` |
+| Windows 10 / 11 | x64 | `lsearch-0.4.0-windows-amd64-installer.exe` |
+| Windows 10 / 11 | ARM64 | `lsearch-0.4.0-windows-arm64-installer.exe` |
+| macOS 11+ | Intel + Apple Silicon 通用 | `lsearch-0.4.0-macos-universal.dmg` |
+| Ubuntu / Debian / 麒麟 | x64 | `lsearch_0.4.0-1_amd64.deb` / `lsearch_0.4.0-1+webkit41_amd64.deb` |
+| Ubuntu / Debian / 麒麟 | ARM64 | `lsearch_0.4.0-1_arm64.deb` / `lsearch_0.4.0-1+webkit41_arm64.deb` |
+| Fedora / RHEL / openEuler | x64 | `lsearch-0.4.0-1.x86_64.rpm` / `lsearch-0.4.0-1.webkit41.x86_64.rpm` |
+| Fedora / RHEL / openEuler | ARM64 | `lsearch-0.4.0-1.aarch64.rpm` / `lsearch-0.4.0-1.webkit41.aarch64.rpm` |
 
 每个版本均附 `SHA256SUMS`，建议下载后校验。
 
@@ -66,7 +66,7 @@ sha256sum -c SHA256SUMS --ignore-missing
 输出 `xxx: OK` 即表示文件完整。Windows 下可用 PowerShell：
 
 ```powershell
-Get-FileHash .\lsearch-0.3.2-windows-amd64-installer.exe -Algorithm SHA256
+Get-FileHash .\lsearch-0.4.0-windows-amd64-installer.exe -Algorithm SHA256
 ```
 
 ---
@@ -75,6 +75,7 @@ Get-FileHash .\lsearch-0.3.2-windows-amd64-installer.exe -Algorithm SHA256
 
 - **搜正文，不只是文件名** —— Office 文档、PDF、电子书、源码、纯文本，内容全部进索引
 - **27 种格式** —— Word / Excel / PowerPoint（含 doc/xls/ppt 老格式）、WPS 的 wps/et/dps、LibreOffice ODF、RTF、PDF、HTML、纯文本与各类源码，以及 EPUB / MOBI / AZW / AZW3 / FB2 电子书
+- **压缩包也能搜** —— ZIP / 7z / RAR / tar.gz 等压缩包内的文档直接展开进索引，结果里标注命中的是包内哪个文件；加密条目自动跳过
 - **中文搜得准** —— 专为中文做的分词方案，两个字的中文词也能精确命中
 - **Google 式查询语法** —— 多关键词 AND、`OR` 分组、`-` 排除、`"精确短语"`，以及 `path:` / `name:` 通配符过滤
 - **正则搜索** —— 内置 RE2 正则全文扫描，可选用 AI 根据自然语言描述生成正则
